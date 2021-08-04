@@ -33,4 +33,17 @@ class Detalle_Pedido{
             $this->id_pedido, $this->producto, $this->cantidad, $this->precio_unitario
         ]);
     }
+    public function verDetallePedido($id){
+        $this->id_pedido=$id;
+        $cn=new Conexion();
+        $cn->getConexion();
+        $verDetallePedido="SELECT producto,cantidad,precio_unitario FROM detalle_pedido WHERE id_pedido='$id'";
+        foreach ($cn->query($verDetallePedido) as $row) {
+            $producto           = $row['producto'];
+            $cantidad           = $row['cantidad'];
+            $precio_unitario    = $row['precio_unitario'];
+        }
+        $datos=array($producto,$cantidad,$precio_unitario);
+        return $datos;
+    }
 }

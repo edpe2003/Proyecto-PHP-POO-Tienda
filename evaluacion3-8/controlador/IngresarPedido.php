@@ -36,4 +36,5 @@ if(isset($_POST['cantidad4']) && $_POST['cantidad4']>0){
     $pedido->monto_total=$pedido->calcularMonto($cantidad,$precio_unitario);
     $detalle_pedido->insertarDetallesPedido($id,$producto,$cantidad,$precio_unitario);
 }
+
 $pedido->modificarMontoTotal($pedido->monto_total,$id);

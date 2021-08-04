@@ -33,6 +33,7 @@ class Detalle_Pedido{
             $this->id_pedido, $this->producto, $this->cantidad, $this->precio_unitario
         ]);
     }
+
     public function verDetallePedido($id){
         $this->id_pedido=$id;
         $cn=new Conexion();
@@ -46,4 +47,5 @@ class Detalle_Pedido{
         $datos=array($producto,$cantidad,$precio_unitario);
         return $datos;
     }
+    
 }

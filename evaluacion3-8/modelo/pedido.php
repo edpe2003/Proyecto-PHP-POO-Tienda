@@ -56,4 +56,16 @@ class Pedido{
             $this->monto_total,$id
         ]);
     }
+
+    public function VerListaPedido($fecha_inicial,$fecha_final){
+        $cn=new Conexion();
+        $cn->getConexion();
+        $VerListaPedido="SELECT cliente,fecha,monto_total FROM pedido WHERE fecha>='$fecha_inicial' AND fecha<='$fecha_final'";
+        foreach ($cn->query($VerListaPedido) as $row) {
+            echo $row['cliente'];
+            echo $row['fecha'];
+            echo $row['monto_total'];
+        }
+    }
+
 }

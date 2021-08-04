@@ -46,6 +46,7 @@ class Pedido{
         ]);
         return $cn->lastInsertId();
     }
+    
     public function modificarMontoTotal($monto_total,$id){
         $this->monto_total=$monto_total;
         $cn=new Conexion();

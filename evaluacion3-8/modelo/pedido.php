@@ -27,7 +27,7 @@ class Pedido{
     public function cantidadVentas($id_vendedor){
         $this->id_vendedor=$id_vendedor;
         $cn=new Conexion();
-        $cantidadVentas="SELECT * FROM pedido WHERE id_vendedor='$this->id_vendedor'";
+        $cantidadVentas="SELECT id_vendedor FROM pedido WHERE id_vendedor='$this->id_vendedor'";
         $cant=0;
         foreach ($cn->query($cantidadVentas) as $row) {
             $cant+=1;
@@ -61,11 +61,24 @@ class Pedido{
     public function VerListaPedido($fecha_inicial,$fecha_final){
         $cn=new Conexion();
         $cn->getConexion();
-        $VerListaPedido="SELECT cliente,fecha,monto_total FROM pedido WHERE fecha>='$fecha_inicial' AND fecha<='$fecha_final'";
+        $VerListaPedido="SELECT cliente,fecha,monto_total 
+        FROM pedido 
+        WHERE fecha>='$fecha_inicial' AND fecha<='$fecha_final'";
         foreach ($cn->query($VerListaPedido) as $row) {
-            echo $row['cliente'];
-            echo $row['fecha'];
-            echo $row['monto_total'];
+            echo '<table>';
+            echo '<div class="row mt-4">';
+            echo '<div class="col">' . 'Cliente: ' . '</div>';
+            echo '<div class="col">' . $row['cliente'] . '</div>';
+            echo '</div>';
+            echo '<div class="row">';
+            echo '<div class="col">' . 'Fecha: ' . '</div>';
+            echo '<div class="col">' . $row['fecha'] . '</div>';
+            echo '</div>';
+            echo '<div class="row" style="border-bottom: 1px solid black;">';
+            echo '<div class="col">' . 'Monto Total: ' . '</div>';
+            echo '<div class="col">' . $row['monto_total'] . '</div>';
+            echo '</div>';
+            echo '</table>';
         }
     }
 

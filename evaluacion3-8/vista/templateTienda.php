@@ -15,7 +15,21 @@
     <!--Main/Productos-->
 
     <main class=" bg-dark">
+        <div class="container bg-light my-5 p-5 rounded shadow text-center">
+            <div class="row">
+                <form action="controlador/VerFechaPedido.php" method="POST">
+                    <div>
+                        <input type="date" name="fecha_1" required>
+                        <input type="date" name="fecha_2" required>
+                        <input type="submit" class="btn btn-warning" value="Lista de Pedidos">
+                    </div>
+                </form>
+            </div>
+        </div>
+
         <form action="controlador/IngresarPedido.php" method="POST">
+
+
 
             <div class="container bg-light my-5 p-5 rounded shadow">
 
@@ -72,7 +86,7 @@
                                 </p>
                                 <div>
                                     <div class="row">
-                                        <div class="col d-grid"><input type="number" name="cantidad3"  value="0" required></div>
+                                        <div class="col d-grid"><input type="number" name="cantidad3" value="0" required></div>
                                         <div class="col d-grid bg-success rounded shadow text-center text-light">
                                             <h4>$150</h4>
                                         </div>
@@ -90,9 +104,48 @@
                                 </p>
                                 <div>
                                     <div class="row">
-                                        <div class="col d-grid"><input type="number" name="cantidad4"  value="0" required></div>
+                                        <div class="col d-grid"><input type="number" name="cantidad4" value="0" required></div>
                                         <div class="col d-grid bg-success rounded shadow text-center text-light">
                                             <h4>$200</h4>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="row mt-5">
+                    <div class="col-sm-6">
+                        <div class="card rounded shadow" style="width: 36rem;">
+                            <img src="vista/img/img5.jpg" class="card-img-top">
+                            <div class="card-body">
+                                <p class="card-text">Hamburgesa con Papas
+                                </p>
+                                <div>
+                                    <div class="row">
+                                        <div class="col d-grid"><input type="number" name="cantidad5" value="0" required></div>
+                                        <div class="col d-grid bg-success rounded shadow text-center text-light">
+                                            <h4>$250</h4>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6">
+                        <div class="card rounded shadow" style="width: 36rem;">
+                            <img src="vista/img/img6.jpg" class="card-img-top">
+                            <div class="card-body">
+                                <p class="card-text">Cazuela
+                                </p>
+                                <div>
+                                    <div class="row">
+                                        <div class="col d-grid"><input type="number" name="cantidad6" value="0" required></div>
+                                        <div class="col d-grid bg-success rounded shadow text-center text-light">
+                                            <h4>$300</h4>
                                         </div>
                                     </div>
                                 </div>

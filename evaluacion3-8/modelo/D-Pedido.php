@@ -40,12 +40,21 @@ class Detalle_Pedido{
         $cn->getConexion();
         $verDetallePedido="SELECT producto,cantidad,precio_unitario FROM detalle_pedido WHERE id_pedido='$id'";
         foreach ($cn->query($verDetallePedido) as $row) {
-            $producto           = $row['producto'];
-            $cantidad           = $row['cantidad'];
-            $precio_unitario    = $row['precio_unitario'];
+            echo '<table>';
+            echo '<div class="row mt-4">';
+            echo '<div class="col">' . 'Producto: ' . '</div>';
+            echo '<div class="col">' . $row['producto'] . '</div>';
+            echo '</div>';
+            echo '<div class="row">';
+            echo '<div class="col">' . 'Cantidad: ' . '</div>';
+            echo '<div class="col">' . $row['cantidad'] . '</div>';
+            echo '</div>';
+            echo '<div class="row" style="border-bottom: 1px solid black;">';
+            echo '<div class="col">' . 'Precio Unitario: ' . '</div>';
+            echo '<div class="col">' . $row['precio_unitario'] . '</div>';
+            echo '</div>';
+            echo '</table>';
         }
-        $datos=array($producto,$cantidad,$precio_unitario);
-        return $datos;
     }
     
-}
+} 

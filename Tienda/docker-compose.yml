@@ -1,0 +1,35 @@
+<<<<<<< HEAD:docker-compose.yml
+version: '3.9'
+services:
+    php-apache:
+      container_name: evaluacion
+      build: .
+      restart: always
+      ports:
+        - 8089:80
+      volumes:
+        - ./:/var/www/html/evaluacion
+      networks:
+        - network
+
+networks:
+  network:
+    driver: bridge
+=======
+version: '3.9'
+services:
+    php-apache:
+      container_name: evaluacion
+      build: .
+      restart: always
+      ports:
+        - 8084:80
+      volumes:
+        - ./:/var/www/html/evaluacion
+      networks:
+        - network
+
+networks:
+  network:
+    driver: bridge
+>>>>>>> 65696b66b915785831a4cf01f9f63cb624716bff:Tienda/docker-compose.yml

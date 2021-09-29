@@ -1,13 +1,13 @@
 version: '3.9'
 services:
     php-apache:
-      container_name: evaluacion
+      container_name: Tienda
       build: .
       restart: always
       ports:
         - 8089:80
       volumes:
-        - ./:/var/www/html/evaluacion
+        - ./:/var/www/html/Tienda
       networks:
         - network
 

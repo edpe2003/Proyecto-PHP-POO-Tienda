@@ -4,7 +4,7 @@ class Conexion extends PDO
  private const USER = "root";
  private const PASS = "root";
  private const DB = "ejercicio_web";
- private const HOST = "192.168.146.130";
+ private const HOST = "localhost";
  private const DSN = "mysql:host=" . self::HOST . ";dbname=" . self::DB . ";charset=utf8";
   
  public function __CONSTRUCT() {

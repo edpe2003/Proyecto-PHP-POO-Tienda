@@ -63,7 +63,7 @@ class Pedido{
         $cn->getConexion();
         $VerListaPedido="SELECT cliente,fecha,monto_total 
         FROM pedido 
-        WHERE fecha>='$fecha_inicial' AND fecha<='$fecha_final'";
+        WHERE fecha >='$fecha_inicial' AND fecha <='$fecha_final'";
         foreach ($cn->query($VerListaPedido) as $row) {
             echo '<table>';
             echo '<div class="row mt-4">';

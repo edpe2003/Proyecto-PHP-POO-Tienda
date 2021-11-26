@@ -19,7 +19,6 @@
 
         <div>
             <?php
-            $edido = new Pedido();
             $pedido->VerListaPedido($fecha_1,$fecha_2);
             ?>
         </div>
